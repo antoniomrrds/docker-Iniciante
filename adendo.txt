@@ -1,0 +1,9 @@
+docker compose build = Constrói a imagem 
+docker compose up = ele inicia o serviço
+docker compose up -d(serve para rodar em segundo plano e nao travar a console)
+docker compose up -d (name do service docker-compose.yml) para executar por partes
+
+docker logs (containerID) = logs do container
+
+
+
