@@ -5,10 +5,22 @@ docker compose up -d (name do service docker-compose.yml) para executar por part
 docker compose stop = para o container
 
 docker ps =  lista os container 
+docker ps -aq = vai mostrar somente os id
 docker logs (containerID) = logs do container
-
+docker ps -f(filter) name=(nome do container) =  server para filtar o container d
+docker inspect (name do container) =  inspecionando um container
+docker rm $(docker ps -aq) = remove todos os containers rodando 
 
 docker build -t (name  algofields/frontend ) . = Constrói a imagem 
 docker images = lista as images
 docker rmi -f = exclui as images
+docker rmi $(docker images -q) =  remove todas as imagens
 docker run-p 3000:3000 (nome da imagem) = executa ela  
+
+
+
+docker system df -v(more information) =  vai listar as imagens e espaco utilizado
+docker container prune = vai apagar todos os container nao utilizados(cuidado)
+docker image prune = vai deletar todas as imagens não utilizadas
+docker system prune = vai deletar tudo nao utilizado
+
