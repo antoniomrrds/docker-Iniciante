@@ -1,0 +1,28 @@
+# linux
+sudo em cada linha de comando
+# docker command line
+
+docker ps  = mostra processos
+docker stop 'container id' = ex: docker stop 5cb182e236as
+
+vai baixar caso voce nao possua na maquina 
+
+## ---- POSTGRES
+docker run --name postgres -e POSTGRES_USER=scorpion -e POSTGRES_PASSWORD=rrsoares -e POSTGRES_DB=heroes -p 5432:5432 -d postgres
+
+entrando no container  postgres 
+docker exec -it postgres /bin/bash
+
+painel de interface adiministrativa 
+link significa que vai conectar com a imagem do postgres
+docker run --name adminer -p 8080:8080 --link postgres:postgres -d adminer
+
+
+## ---- MONGODB
+docker run --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=rrsoares -d mongo:4
+
+painel de interface adiministrativa 
+
+docker run --name mongoclient -p 3000:3000 --link mongodb:mongodb -d mongoclient/mongoclient
+
+docker exec -it mongodb  mongo --host localhost -u admin -p rrsoares --authenticationDatabase admin --eval "db.getSiblingDB('herois').createUser({user:'scorpion',pwd:'rrsoares',roles:[{role:'readWrite',db:'herois'}]})" 
