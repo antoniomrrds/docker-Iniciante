@@ -1,0 +1,11 @@
+abra o powershell(admin)
+
+wsl --install
+
+winget search docker 
+
+iDocker = pegue o ID do docker desktop 
+
+winger install idDocker
+
+
