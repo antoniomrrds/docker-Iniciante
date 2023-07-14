@@ -25,4 +25,7 @@ painel de interface adiministrativa
 
 docker run --name mongoclient -p 3000:3000 --link mongodb:mongodb -d mongoclient/mongoclient
 
+Aqui está um exemplo simplificado do comando Docker para iniciar o MongoDB sem autenticação:
+docker run --name mongodb -p 27017:27017 -d mongo
+
 docker exec -it mongodb  mongo --host localhost -u admin -p rrsoares --authenticationDatabase admin --eval "db.getSiblingDB('herois').createUser({user:'scorpion',pwd:'rrsoares',roles:[{role:'readWrite',db:'herois'}]})" 
