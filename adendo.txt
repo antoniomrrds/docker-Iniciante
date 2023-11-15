@@ -7,6 +7,11 @@ docker compose stop = para o container
 docker ps =  lista os container 
 docker ps -aq = vai mostrar somente os id
 docker logs (containerID) = logs do container
+
+docker logs -f NOME_DO_CONTAINER => Para visualizar os logs de um contêiner Docker e acompanhar em tempo real, você pode usar o comando docker logs junto com a opção -f (follow).
+
+docker-compose logs -f node-api =>   Se precisar ver detalhes específicos, como logs de apenas um serviço dentro do Docker Compose, você pode usar o nome do serviço em vez do nome do contêiner. Por exemplo, se você tiver um serviço chamado node-api em seu Docker Compose
+
 docker ps -f(filter) name=(nome do container) =  server para filtar o container d
 docker inspect (name do container) =  inspecionando um container
 docker rm $(docker ps -aq) = remove todos os containers rodando 
